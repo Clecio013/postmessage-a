@@ -6,19 +6,15 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>PostMessage A</h1>
+  <button onclick="sendMessage()">Send Message</button>
+
   <script>
-    const user = {
-      name: 'Clecio',
-      age: 25,
-      email: 'clecioaljunior@gmail.com'
+    function sendMessage() {
+      const otherWindow = window.open('https://clecio-postmessage-b.netlify.app/index.html');
+      const message = 'Hello from Origin 1!';
+      const targetOrigin = 'https://clecio-postmessage-b.netlify.app';
+      otherWindow.postMessage(message, targetOrigin);
     }
-
-    const message = {
-      user
-    }
-
-    window.postMessage(message, 'https://clecio-postmessage-b.netlify.app')
   </script>
 </body>
 </html>
