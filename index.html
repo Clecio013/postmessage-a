@@ -6,14 +6,12 @@
   <title>Document</title>
 </head>
 <body>
-  <button onclick="sendMessage()">Send Message</button>
+  <button onclick="sendMessage()">Send Message to Parent</button>
 
   <script>
     function sendMessage() {
-      const otherWindow = window.open('https://clecio-postmessage-b.netlify.app');
-      const message = 'Hello from Origin 1!';
-      const targetOrigin = 'https://clecio-postmessage-b.netlify.app';
-      otherWindow.postMessage(message, targetOrigin);
+      const message = 'Hello from Child Window!';
+      parent.postMessage(message, 'https://clecio-postmessage-b.netlify.app/');
     }
   </script>
 </body>
