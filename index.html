@@ -10,7 +10,7 @@
 
   <script>
     function sendMessage() {
-      const otherWindow = window.open('https://clecio-postmessage-b.netlify.app/index.html');
+      const otherWindow = window.open('https://clecio-postmessage-b.netlify.app');
       const message = 'Hello from Origin 1!';
       const targetOrigin = 'https://clecio-postmessage-b.netlify.app';
       otherWindow.postMessage(message, targetOrigin);
